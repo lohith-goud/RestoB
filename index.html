@@ -3,211 +3,307 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <style>
-      .body {
+      /* GLOBAL */
+      body {
         background-color: black;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
       }
+
+      /* NAVBAR */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+
+      nav img {
+        width: 80px;
+        height: 80px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav li {
+        color: white;
+        margin-left: 20px;
+        cursor: pointer;
+      }
+
+      nav li:hover {
+        color: red;
+      }
+
+      /* HERO IMAGE */
       .img {
         width: 100%;
         height: 70vh;
         background-image: url("https://wallpaperaccess.com/full/3353887.jpg");
-        background-size: cover; 
-        background-position: center; 
+        background-size: cover;
+        background-position: center;
         background-repeat: no-repeat;
       }
-      nav {
-       display: flex;            
-       justify-content: space-between; 
-      align-items: center;        
-      padding: 10px 20px;         
-    }
-    
-   
-      nav li {
-        display: inline;
-        justify-content: end;
-        color: white;
-        margin-left: 20px;
-      }
-      img {
-        width: 100px;
-        height: 100px;
-      }
+
+      /* HOME TEXT */
       .home {
         color: white;
         text-align: center;
+        margin-top: 10px;
       }
+
       h1 {
         text-decoration: double red underline;
       }
-      .menu {
-        display: inline-flex;
+
+      /* PARAGRAPH */
+      .infoText {
+        color: darkgrey;
         text-align: center;
-        margin-left: 20px;
-        margin-top: 20px;
+        margin: 20px auto;
+        width: 80%;
+        line-height: 1.5;
       }
-      div img {
+
+      /* RESERVATION SECTION */
+      .reservation {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .reservation select,
+      .reservation input {
+        padding: 10px;
+        margin: 10px;
         width: 250px;
-        height: 200px;
-        padding: 20px;
+        max-width: 90%;
       }
-      .input {
-        margin-top: 60px;
-        margin-bottom: 30px;
-        text-align: center;
+
+      button {
+        padding: 10px 20px;
+        color: red;
+        cursor: pointer;
+        font-weight: bold;
       }
+
       button:hover {
         background-color: greenyellow;
         color: black;
       }
-      li:hover {
-        color: red;
-        cursor: pointer;
+
+      /* MENU ITEMS */
+      .menu {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        text-align: center;
       }
+
+      .menu div {
+        margin: 20px;
+      }
+
+      .menu img {
+        width: 250px;
+        height: 200px;
+        border-radius: 10px;
+      }
+
+      /* INPUT AREA */
+      .input {
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      textarea {
+        width: 80%;
+        max-width: 500px;
+      }
+
       .btn {
         text-align: center;
         margin-bottom: 30px;
       }
-      .reservation{
-        text-align: center;
-        margin-top: 30px;
+
+      /* -------------------------
+           MOBILE RESPONSIVE 
+      --------------------------*/
+      @media (max-width: 768px) {
+        /* NAVBAR MOBILE */
+        nav {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        nav ul {
+          flex-direction: column;
+        }
+
+        nav li {
+          margin: 10px 0;
+        }
+
+        /* HERO */
+        .img {
+          height: 40vh;
+        }
+
+        /* PARAGRAPH */
+        .infoText {
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        /* MENU */
+        .menu {
+          flex-direction: column;
+        }
+
+        .menu img {
+          width: 90%;
+          height: auto;
+        }
+
+        /* RESERVATION INPUTS */
+        .reservation select,
+        .reservation input {
+          width: 90%;
+        }
+
+        textarea {
+          width: 90%;
+        }
       }
-    
     </style>
+
     <title>RestroB</title>
   </head>
-  <body class="body">
+
+  <body>
+
     <nav>
-      <img
-        src="https://tse4.mm.bing.net/th/id/OIP.w9h4Cc2tjhp-Ro7RQLlP1QHaFx?pid=Api&P=0&h=220"
-        alt="Logo"
-      />
+      <img src="https://tse4.mm.bing.net/th/id/OIP.w9h4Cc2tjhp-Ro7RQLlP1QHaFx?pid=Api&P=0&h=220" alt="Logo" />
+
       <ul class="navItems">
-      <li>Home</li>
-      <li>Menu</li>
-      <li>Reservation</li>
-      <li>About us</li>
-      <li>Contact us</li>
-    </ul>
+        <li>Home</li>
+        <li>Menu</li>
+        <li>Reservation</li>
+        <li>About us</li>
+        <li>Contact us</li>
+      </ul>
     </nav>
+
     <div class="home">
       <h1>Welcome to RestoB</h1>
       <p>This is the RestoB page.</p>
     </div>
-    <div class="img"></div>
-    <div>
-      <h2 style="color: white; text-align: center; margin-top: 20px">
-        Your Local Gathering Spot for Delicious Food and Good Times
-      </h2>
-      <div>
-        <p
-          style="
-            color: darkgrey;
-            text-align: center;
-            margin-left: 100px;
-            margin-right: 100px;
-          "
-        >
-          Welcome to RestroB — where great food meets great vibes! Step into a
-          warm, stylish space filled with delicious aromas, refreshing
-          beverages, and a lively atmosphere perfect for friends, families, and
-          weekend hangouts. Whether you’re craving flavorful starters, hearty
-          main courses, or signature drinks, RestroB brings you a dining
-          experience that’s fresh, fun, and unforgettable. Come, relax, and
-          enjoy moments that taste as good as they feel!
-        </p>
-      </div>
-      <div class="reservation">
-        <h3 style="color:chocolate">Make a Reservation</h3>
-        <select name="people" id="people">
-          option value="p0">Select number of people</option>
-          <option value="p1">1 Person</option>
-          <option value="p2">2 People</option>
-          <option value="p3">3 People</option>
-          <option value="p4">4 People</option>
-          <option value="p5">5 People</option>
-          <option value="p6">6 People</option>  
-          <option value="p7">7 People</option>
-          <option value="p8">8 People</option>
-          <option value="p9">9 People</option>
-          <option value="p10">10 People</option>
-        </select>
-        
-        <label for="date"></label>
-        <input type="date" id="date" name="date" min="2020-01-01" max="2025-12-31">
 
-        <select name="time" id="time">
-          <option value="t0">Select Time</option>
-          <option value="t1">6:00 PM</option>
-          <option value="t2">7:00 PM</option>
-          <option value="t3">8:00 PM</option>
-          <option value="t4">9:00 PM</option>
-          <option value="t5">10:00 PM</option>
-        </select>
-        <button type="submit" style="color:red">Reserve Now</button>
-      </div>
+    <div class="img"></div>
+
+    <h2 style="color: white; text-align: center; margin-top: 20px">
+      Your Local Gathering Spot for Delicious Food and Good Times
+    </h2>
+
+    <p class="infoText">
+      Welcome to RestroB — where great food meets great vibes! Step into a warm,
+      stylish space filled with delicious aromas, refreshing beverages, and a
+      lively atmosphere perfect for friends, families, and weekend hangouts.
+      Whether you're craving flavorful starters, hearty main courses, or
+      signature drinks, RestroB brings you a dining experience that's fresh,
+      fun, and unforgettable. Come, relax, and enjoy moments that taste as good
+      as they feel!
+    </p>
+
+    <div class="reservation">
+      <h3 style="color: chocolate">Make a Reservation</h3>
+
+      <select name="people" id="people">
+        <option>Select number of people</option>
+        <option>1 Person</option>
+        <option>2 People</option>
+        <option>3 People</option>
+        <option>4 People</option>
+        <option>5 People</option>
+        <option>6 People</option>
+        <option>7 People</option>
+        <option>8 People</option>
+        <option>9 People</option>
+        <option>10 People</option>
+      </select>
+
+      <input type="date" id="date" name="date" />
+
+      <select name="time" id="time">
+        <option>Select Time</option>
+        <option>6:00 PM</option>
+        <option>7:00 PM</option>
+        <option>8:00 PM</option>
+        <option>9:00 PM</option>
+        <option>10:00 PM</option>
+      </select>
+
+      <button>Reserve Now</button>
     </div>
+
     <div class="menu">
       <div class="starters">
         <h2 style="color: white">Starters</h2>
-        <img
-          src="https://tse1.mm.bing.net/th/id/OIP.V1kwx6YJp_QkUcBwwlpt0wHaE8?pid=Api&P=0&h=220"
-          alt="starters"
-        />
-        <select name="starters" id="starters">
-          <option value="it0">Select the Starter</option>
-          <option value="it1">Bruschetta - $6.99</option>
-          <option value="it2">Stuffed Mushrooms - $7.99</option>
-          <option value="it3">Garlic Bread - $4.99</option>
+        <img src="https://tse1.mm.bing.net/th/id/OIP.V1kwx6YJp_QkUcBwwlpt0wHaE8?pid=Api&P=0&h=220" alt="starters" />
+        <select>
+          <option>Select Starter</option>
+          <option>Bruschetta - $6.99</option>
+          <option>Stuffed Mushrooms - $7.99</option>
+          <option>Garlic Bread - $4.99</option>
         </select>
       </div>
 
       <div class="MainCourse">
         <h2 style="color: white">Main Course</h2>
-        <img
-          src="https://tse1.mm.bing.net/th/id/OIP.AD_kF-H_ojdochDdgPCzmgHaE8?pid=Api&P=0&h=220"
-          alt="MainCourse"
-        />
-
-        <select name="mc" id="mc">
-          <option value="m0">Select the Main Course</option>
-          <option value="m1">Grilled Salmon - $15.99</option>
-          <option value="m2">Chicken Alfredo - $13.99</option>
-          <option value="m3">Vegetable Stir Fry - $12.99</option>
+        <img src="https://tse1.mm.bing.net/th/id/OIP.AD_kF-H_ojdochDdgPCzmgHaE8?pid=Api&P=0&h=220" alt="MainCourse" />
+        <select>
+          <option>Select Main Course</option>
+          <option>Grilled Salmon - $15.99</option>
+          <option>Chicken Alfredo - $13.99</option>
+          <option>Vegetable Stir Fry - $12.99</option>
         </select>
       </div>
+
       <div class="beverages">
         <h2 style="color: white">Beverages</h2>
-        <img
-          src="https://tse2.mm.bing.net/th/id/OIP.UGQAHpjOKiysIUT5BkTQyQHaEK?pid=Api&P=0&h=220"
-          alt="beverages"
-        />
-        <select name="bvg" id="bvg">
-          <option value="b0">Select the Beverage</option>
-          <option value="b1">Lemonade - $2.99</option>
-          <option value="b2">Iced Tea - $2.49</option>
-          <option value="b3">Coffee - $1.99</option>
-          <option value="b4">Smoothies - $1.49</option>
-          <option value="b5">Cocktails - $3.99</option>
-          <option value="b6">Mocktails - $5.99</option>
-          <option value="b7">Budweiser Beer - $4.99</option>
-          <option value="b8">Jack Daniels - $24.99</option>
+        <img src="https://tse2.mm.bing.net/th/id/OIP.UGQAHpjOKiysIUT5BkTQyQHaEK?pid=Api&P=0&h=220" alt="beverages" />
+        <select>
+          <option>Select Beverage</option>
+          <option>Lemonade - $2.99</option>
+          <option>Iced Tea - $2.49</option>
+          <option>Coffee - $1.99</option>
+          <option>Smoothies - $1.49</option>
+          <option>Cocktails - $3.99</option>
+          <option>Mocktails - $5.99</option>
+          <option>Budweiser Beer - $4.99</option>
+          <option>Jack Daniels - $24.99</option>
         </select>
       </div>
     </div>
+
     <div class="input">
       <label for="em" style="color: white">About order:</label><br />
-      <textarea
-        id="em"
-        name="em"
-        placeholder="Enter Additional information about your order here..."
-        rows="4"
-        cols="50"
-        style="margin-top: 20px"
-      ></textarea>
+      <textarea id="em" rows="4" cols="50" placeholder="Enter additional information..."></textarea>
     </div>
+
     <div class="btn">
-      <button type="submit">Submit</button>
+      <button>Submit</button>
     </div>
+
   </body>
 </html>
+
